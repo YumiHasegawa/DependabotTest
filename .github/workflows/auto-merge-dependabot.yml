@@ -1,6 +1,15 @@
 name: Auto-Merge Dependabot
-dependabot:
+on:
+  push:
+    branches:
+      - '**'
+permissions:
+  contents: write
+  
+jobs:
+  dependabot:
     name: 'Dependabot'
+    runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' && github.event_name == 'pull_request'}}
     steps:
       - name: Enable auto-merge for Dependabot PRs
