@@ -1,8 +1,9 @@
 name: Auto-Merge Dependabot
 
 on:
-  pull_request_target:
-    types: [review_requested]
+  push:
+    branches:
+      - '**'
     
 permissions:
   contents: write
